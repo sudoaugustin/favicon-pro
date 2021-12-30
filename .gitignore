@@ -1,0 +1,4 @@
+node_modules
+test/dist
+test/module/dist
+test/module/.cache
