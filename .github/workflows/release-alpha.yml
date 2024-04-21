@@ -29,6 +29,6 @@ jobs:
           pnpm install --no-frozen-lockfile
           pnpm build
           pnpm version ${{ env.VERSION }}-alpha.${{ env.COMMIT_ID }} --force --no-git-tag-version
-          pnpm publish --tag alpha
+          pnpm publish --tag alpha --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
