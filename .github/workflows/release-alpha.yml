@@ -21,8 +21,8 @@ jobs:
 
       - name: Set variables
         run: |
+          echo "VERSION=$(npm view ./ version)" >> $GITHUB_ENV
           echo "COMMIT_ID=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
-          echo "VERSION=$(npm view ./packages/${{ github.event.inputs.name }} version)" >> $GITHUB_ENV
 
       - name: Build & Publish
         run: |
