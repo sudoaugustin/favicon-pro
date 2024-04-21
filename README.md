@@ -31,28 +31,28 @@ faviconPro
 [
  {
      rel: 'apple-touch-icon',
+     src: 'https://static.npmjs.com/58a....4.png',
      size: 120,
-     href: 'https://static.npmjs.com/58a....4.png'
  },
  {
      rel: 'apple-touch-icon',
+     src: 'https://static.npmjs.com/3dc....c.png',
      size: 180,
-     href: 'https://static.npmjs.com/3dc....c.png'
  },
  {
      rel: 'icon',
+     src: 'https://static.npmjs.com/b0f....2.png',
      size: 32,
-     href: 'https://static.npmjs.com/b0f....2.png'
  },
  {
      rel: 'icon',
+     src: 'https://static.npmjs.com/199....9.png',
      size: 230,
-     href: 'https://static.npmjs.com/199....9.png'
  },
  {
      rel: 'icon',
+     src: 'https://static.npmjs.com/da3....2.png',
      size: 16,
-     href: 'https://static.npmjs.com/da3....2.png'
  },
 ]
 */
@@ -77,13 +77,13 @@ faviconPro
 [
  {
      rel: 'apple-touch-icon',
+     src: 'https://static.npmjs.com/3dc....c.png',
      size: 180,
-     href: 'https://static.npmjs.com/3dc....c.png'
  },
  {
      rel: 'icon',
+     src: 'https://static.npmjs.com/199....9.png',
      size: 230,
-     href: 'https://static.npmjs.com/199....9.png'
  },
 ]
 */
@@ -106,8 +106,8 @@ faviconPro
 /*
  {
      rel: 'icon',
+     src: 'https://static.npmjs.com/199....9.png',
      size: 230,
-     href: 'https://static.npmjs.com/199....9.png'
  },
 */
 ```

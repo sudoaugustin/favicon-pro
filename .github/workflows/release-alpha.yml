@@ -21,14 +21,14 @@ jobs:
 
       - name: Set variables
         run: |
+          echo "VERSION=$(npm view ./ version)" >> $GITHUB_ENV
           echo "COMMIT_ID=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
-          echo "VERSION=$(npm view ./packages/${{ github.event.inputs.name }} version)" >> $GITHUB_ENV
 
       - name: Build & Publish
         run: |
           pnpm install --no-frozen-lockfile
           pnpm build
-          pnpm version ${{ env.VERSION }}-alpha.${{ env.COMMIT_ID }}
-          pnpm publish --access public
+          pnpm version ${{ env.VERSION }}-alpha.${{ env.COMMIT_ID }} --force --no-git-tag-version
+          pnpm publish --tag alpha --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
