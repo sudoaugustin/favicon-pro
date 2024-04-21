@@ -1,50 +1,35 @@
 {
-  "name": "favecon",
-  "version": "1.0.2",
-  "author": {
-    "name": "Augustin Joseph",
-    "url": "https://twitter.com/sudoaugustin/"
+  "name": "favicon-pro",
+  "license": "MIT",
+  "version": "1.0.0",
+  "author": "https://augustin.zip/",
+  "files": ["dist"],
+  "description": "Fetch the best quality favicons of websites",
+  "keywords": ["logo", "icon", "favicon", "fav-ico", "website-logo"],
+  "main": "dist/index.cjs.js",
+  "exports": {
+    "node": "./dist/index.cjs.js",
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.esm.js"
   },
-  "main": "dist/node.js",
-  "unpkg": "dist/unpkg.js",
-  "module": "dist/module.js",
-  "react-native": "dist/native.js",
-  "description": "Get best quality favicons of any website",
   "scripts": {
-    "build": "rollup -c",
-    "watch": "rollup -c -w",
-    "release": "node scripts/publish",
-    "test:node": "npm link && cd test/node && npm link favecon && npm start",
-    "release:local": "sudo npm link && npm link favecon --workspaces"
+    "build": "rm -rf dist && pnpm build:dts && pnpm build:esm && pnpm build:cjs",
+    "build:dts": "tsc -p tsconfig.build.json --outDir ./dist",
+    "build:esm": "esbuild index.ts --bundle --format=esm --outfile=./dist/index.esm.js --inject:./src/shim.esm.js",
+    "build:cjs": "esbuild index.ts --bundle --format=cjs --outfile=./dist/index.cjs.js --inject:./src/shim.cjs.js --packages=external"
   },
-  "workspaces": [
-    "./test/*"
-  ],
-  "files": [
-    "dist"
-  ],
-  "keywords": [
-    "logo",
-    "icon",
-    "favicon",
-    "fav-ico",
-    "website-logo"
-  ],
-  "bugs": "https://github.com/sudoaugustin/favecon/issues/new",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sudoaugustin/favecon.git"
-  },
+  "repository": "https://github.com/sudoaugustin/favicon-pro.git",
   "dependencies": {
-    "node-fetch": "^2.6.1",
-    "node-html-parser": "^4.0.0"
+    "node-fetch": "^2.7.0",
+    "node-html-parser": "^6.1.13"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.12.17",
-    "@rollup/plugin-alias": "^3.1.2",
-    "@rollup/plugin-babel": "^5.3.0",
-    "exec-sh": "^0.3.6",
-    "rollup-plugin-terser": "^7.0.2"
+    "@biomejs/biome": "^1.7.0",
+    "esbuild": "^0.20.2",
+    "typescript": "^5.4.5"
   },
-  "license": "ISC"
+  "peerDependencies": {
+    "node-fetch": "^2.7.0",
+    "node-html-parser": "^6.1.13"
+  }
 }

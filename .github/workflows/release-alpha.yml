@@ -3,7 +3,7 @@ name: "Publish Stable Version"
 on:
   push:
     branches:
-      - main
+      - develop
 
 jobs:
   publish:
@@ -19,10 +19,16 @@ jobs:
           node-version: 20
           registry-url: https://registry.npmjs.org/
 
+      - name: Set variables
+        run: |
+          echo "COMMIT_ID=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+          echo "VERSION=$(npm view ./packages/${{ github.event.inputs.name }} version)" >> $GITHUB_ENV
+
       - name: Build & Publish
         run: |
           pnpm install --no-frozen-lockfile
           pnpm build
+          pnpm version ${{ env.VERSION }}-alpha.${{ env.COMMIT_ID }}
           pnpm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
