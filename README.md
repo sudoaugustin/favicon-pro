@@ -1,32 +1,16 @@
-# Favecon
+# `favicon-pro`
 
-### Get best quality favicons of any website
+### Fetch the best quality favicons of websites
 
-> Most APIs give old or low quality favicons. Fetch live and high quality favicons of websites using favecon from **own server** or **client devices**.
+> Most APIs give old or low quality favicons. Fetch live and high quality favicons of websites using favicon-pro from **node server** or **browser extensions**. This package doesn't work on website's client-side because of [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors). But works on browser extension(add-on).
 
 </br>
 
 ## 📦 Installation
 
-#### NPM
-
 ```bash
-npm install favecon
+npm install favicon-pro
 ```
-
-#### Yarn
-
-```bash
-yarn add favecon
-```
-
-#### ⚠️ Note
-
-- Not support ES5. If you need to support ES5, you can compile your code with [Babel](https://babeljs.io/) and using preset [@babel/preset-env](https://babeljs.io/docs/en/babel-preset-env).
-
-- Not work on website's client-side code because of [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors). But works on browser's extension(add-on) code.
-
-</br>
 
 ## Methods
 
@@ -34,20 +18,11 @@ yarn add favecon
 
 This method fetch all available favicons from given url.
 
-#### Syntax
-
 ```Cycript
-getIcons(url:String)
-  .then((icons:[Icon]) => { ... });
-```
+import faviconPro from 'favicon-pro';
+// const faviconPro = require('favicon-pro');
 
-#### Example
-
-```Cycript
-import favecon from 'favecon';
-// const favecon = require('favecon');
-
-favecon
+faviconPro
   .getIcons('https://npmjs.com')
   .then(icons => console.log(icons));
 
@@ -89,20 +64,11 @@ favecon
 
 This method fetch all available favicons from given url. Then group the fetched icons by **rel** & select the best icon on each group.
 
-#### Syntax
-
 ```Cycript
-getBestIcons(url:String)
-  .then((icons:[Icon]) => { ... });
-```
+import faviconPro from 'favicon-pro';
+// const faviconPro = require('favicon-pro');
 
-#### Example
-
-```Cycript
-import favecon from 'favecon';
-// const favecon = require('favecon');
-
-favecon
+faviconPro
   .getBestIcons('https://npmjs.com')
   .then(icons => console.log(icons));
 
@@ -129,20 +95,11 @@ favecon
 
 This method gives you the best icon (based on **size**).
 
-#### Syntax
-
 ```Cycript
-getBestIcon(url:String)
-  .then((icon:Icon) => { ... });
-```
+import faviconPro from 'favicon-pro';
+// const faviconPro = require('favicon-pro');
 
-#### Example
-
-```Cycript
-import favecon from 'favecon';
-// const favecon = require('favecon');
-
-favecon
+faviconPro
   .getBestIcon('https://npmjs.com')
   .then(icon => console.log(icon));
 
@@ -159,18 +116,6 @@ favecon
 
 ## getIcons vs getBestIcons vs getBestIcon
 
-<img src="https://raw.githubusercontent.com/sudoaugustin/favecon/main/.github/Comparison.png">
+<img src="https://raw.githubusercontent.com/sudoaugustin/favicon-pro/main/.github/method-comparison.png">
 
 </br>
-
-## Icon
-
-A object with the following properties
-
-- **rel** : String
-- **size** : Number | Undefined
-- **href** : String
-
-<br/>
-
-[<img src="https://raw.githubusercontent.com/sudoaugustin/favecon/main/.github/ProjectBy.png">](https://github.com/sudoaugustin)

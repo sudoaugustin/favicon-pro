@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve",
+    "strict": true,
+    "target": "ES2018",
+    "module": "CommonJS",
+    "declaration": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true
+  }
+}

@@ -1,4 +1,11 @@
-node_modules
-test/dist
-test/module/dist
-test/module/.cache
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+dist/
+node_modules/
+
+package-lock.json
