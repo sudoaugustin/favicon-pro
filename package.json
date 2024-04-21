@@ -1,7 +1,7 @@
 {
   "name": "favicon-pro",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "https://augustin.zip/",
   "files": ["dist"],
   "description": "Fetch the best quality favicons of websites",

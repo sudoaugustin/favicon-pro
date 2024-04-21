@@ -116,6 +116,6 @@ faviconPro
 
 ## getIcons vs getBestIcons vs getBestIcon
 
-<img src="https://raw.githubusercontent.com/sudoaugustin/favicon-pro/main/.github/method-comparison.png">
+<img src="https://raw.githubusercontent.com/sudoaugustin/favicon-pro/main/.github/assets/method-comparison.png">
 
 </br>
