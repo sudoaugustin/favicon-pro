@@ -1,4 +1,4 @@
-name: "Publish Stable Version"
+name: "Publish Alpha Version"
 
 on:
   push:
